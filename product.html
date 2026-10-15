@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product | Moss &amp; Clay</title>
+  <meta name="description" content="Handmade stoneware cups, plates, dishes, and coffee pairs in natural glazes. Small batches, shaped by hand.">
+  <meta name="theme-color" content="#351F13">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏺</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500..700&family=Montserrat:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="product">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner">
+      <nav class="nav nav--left" aria-label="Company">
+        <a href="#about">About</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="logo" href="index.html">Moss &amp; Clay</a>
+
+      <nav class="nav nav--right" aria-label="Shop">
+        <a class="nav__catalog" href="index.html#collection">Catalog</a>
+        <a href="index.html?view=favorites"><svg class="nav__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg><span class="nav__label">Favorites</span><span class="count is-zero" id="favCount">0</span></a>
+        <button type="button" class="nav__cart" data-action="cart-open" aria-haspopup="dialog"><span class="nav__label">Cart</span><span class="count is-zero" id="cartCount">0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container shop shop--page">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <a href="index.html#collection">Catalog</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <span aria-current="page" id="crumbCurrent">Product</span>
+      </nav>
+
+      <!-- The product is drawn here by script.js, using the ?id= number in the address -->
+      <article class="pdp" id="product"></article>
+
+      <noscript><p class="empty">Please turn on JavaScript to see this product.</p></noscript>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="footer__logo" href="index.html">Moss &amp; Clay</a>
+          <p>Small-batch stoneware, shaped by hand and glazed with natural minerals.</p>
+        </div>
+
+        <form class="newsletter" id="newsletter" novalidate>
+          <label class="newsletter__title" for="nlEmail">Newsletter</label>
+          <p id="nlHint">New batches, restocks, and notes from the studio. No spam.</p>
+          <div class="newsletter__field">
+            <input id="nlEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required aria-describedby="nlHint nlStatus">
+            <button type="submit" aria-label="Subscribe">
+              <svg class="cta__arrow" viewBox="0 0 32 12" aria-hidden="true" focusable="false"><path d="M0 6h30M25 1l5 5-5 5"/></svg>
+            </button>
+          </div>
+          <p class="newsletter__status" id="nlStatus" role="status"></p>
+        </form>
+      </div>
+
+      <div class="footer__cols">
+        <section id="about">
+          <h2>About</h2>
+          <p>Moss &amp; Clay is a small ceramics studio. Every piece is shaped by hand, dried slowly, and glazed with natural minerals.</p>
+        </section>
+        <section id="delivery">
+          <h2>Delivery</h2>
+          <p>Orders ship within three working days, packed in recycled paper. Delivery takes two to five days.</p>
+        </section>
+        <section id="contact">
+          <h2>Contact</h2>
+          <p><a href="mailto:hello@example.com">hello@example.com</a><br>Sunday to Thursday, 9 am to 5 pm</p>
+        </section>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="year">2026</span> Moss &amp; Clay. Sample project: the shop, products, and prices are fictional.</p>
+        <p>Photos from Pexels and Unsplash.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CART DRAWER ============ -->
+  <dialog class="cart-dialog" id="cartDialog" aria-labelledby="cartTitle">
+    <div class="cart-dialog__panel">
+      <div class="cart-dialog__head">
+        <h2 id="cartTitle">Your cart</h2>
+        <button type="button" class="icon-btn" data-action="cart-close" aria-label="Close cart">&times;</button>
+      </div>
+      <div class="cart-dialog__body" id="cartBody"></div>
+      <div class="cart-dialog__foot" id="cartFoot"></div>
+    </div>
+  </dialog>
+
+  <p class="sr-only" id="liveStatus" role="status"></p>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
